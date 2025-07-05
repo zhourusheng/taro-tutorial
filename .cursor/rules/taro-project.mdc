@@ -1,0 +1,119 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Taro 微信小程序开发规则
+
+## 项目介绍
+本项目是基于 Taro 4.1.2 + React 18 + TypeScript 开发的微信小程序项目。Taro 是一个开放式跨端跨框架解决方案，支持使用 React/Vue/Nerv 等框架来开发小程序、H5、RN 等多端应用。
+
+## 项目结构
+```
+├── dist                   编译结果目录
+├── config                 编译配置目录
+│   ├── index.js           编译配置文件
+│   └── ...                其他配置文件
+├── src                    源码目录
+│   ├── pages              页面文件目录
+│   │   └── index          index页面目录
+│   │       ├── index.tsx  页面逻辑
+│   │       ├── index.less 页面样式
+│   │       └── index.config.ts 页面配置
+│   ├── app.ts             项目入口文件
+│   ├── app.less           项目总通用样式
+│   ├── app.config.ts      项目入口配置
+│   └── index.html         H5的模板文件
+├── project.config.json    微信小程序项目配置
+├── babel.config.js        Babel配置
+├── tsconfig.json          TypeScript配置
+└── package.json           项目依赖配置
+```
+
+## 开发规范
+
+### 文件命名规范
+- 页面文件夹、组件文件夹：小写字母开头，多个单词用连字符（-）连接
+- React组件文件：大写字母开头，使用PascalCase命名
+- 普通JS/TS文件：小写字母开头，使用kebab-case命名
+- 样式文件：与对应的组件或页面同名，扩展名为.less
+
+### 目录结构规范
+- 公共组件放在 `src/components` 目录下
+- 工具函数放在 `src/utils` 目录下
+- API接口相关放在 `src/services` 目录下
+- 全局状态管理放在 `src/store` 目录下
+- 常量定义放在 `src/constants` 目录下
+- 类型定义放在 `src/types` 目录下
+
+### 代码规范
+- 使用TypeScript进行开发，确保类型安全
+- 使用ESLint进行代码检查
+- 使用函数组件和Hooks编写React组件
+- 公共样式使用Less变量统一管理
+
+## 常用命令
+
+### 开发命令
+```bash
+# 安装依赖
+npm install
+
+# 微信小程序开发
+npm run dev:weapp
+
+# 支付宝小程序开发
+npm run dev:alipay
+
+# H5开发
+npm run dev:h5
+```
+
+### 构建命令
+```bash
+# 构建微信小程序
+npm run build:weapp
+
+# 构建支付宝小程序
+npm run build:alipay
+
+# 构建H5版本
+npm run build:h5
+```
+
+## Windows 10 特别说明
+
+### 环境配置
+1. 安装Node.js (推荐v16.0.0及以上)
+2. 安装微信开发者工具
+3. 配置微信开发者工具的CLI路径，便于命令行调用
+
+### 常见问题
+1. 路径过长问题：Windows系统路径长度有限制，如遇到相关错误，可尝试将项目放在磁盘根目录或缩短路径
+2. 权限问题：某些操作可能需要管理员权限，请使用管理员身份运行命令行
+3. 文件名大小写问题：Windows文件系统默认不区分大小写，但Git会区分，开发时需注意
+
+### 最佳实践
+1. 使用pnpm作为包管理工具，提高依赖安装速度
+2. 使用WSL2进行开发可以规避部分Windows特有的问题
+3. 使用Visual Studio Code进行开发，安装Taro相关插件提高开发效率
+
+## 开发流程
+1. 创建页面：`npx taro create --name [页面名]`
+2. 配置路由：在`src/app.config.ts`中添加页面路径
+3. 开发功能
+4. 调试测试
+5. 构建发布
+
+## 调试技巧
+1. 使用Console输出调试信息
+2. 利用微信开发者工具的调试器
+3. 使用Taro.setEnableDebug开启调试模式
+4. 使用Redux DevTools进行状态管理调试
+
+## 其他资源
+- [Taro官方文档](mdc:https:/taro-docs.jd.com)
+- [微信小程序开发文档](mdc:https:/developers.weixin.qq.com/miniprogram/dev/framework)
+- [React官方文档](mdc:https:/reactjs.org/docs/getting-started.html)
+
+
