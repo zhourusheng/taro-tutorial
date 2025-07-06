@@ -47,6 +47,7 @@
 - React Context 使用
 - Redux 集成与使用
 - Mobx 集成与使用
+- zustand 集成与使用
 - 状态管理最佳实践
 
 7. Taro 规范
